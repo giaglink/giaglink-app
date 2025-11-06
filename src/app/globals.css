@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark {
+    --background: 216 78% 11%; /* #0A192F (Navy Blue) */
+    --foreground: 210 40% 98%; /* White */
+    --card: 216 78% 13%;
+    --card-foreground: 210 40% 98%;
+    --popover: 216 78% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%; /* White for primary elements like logo and highlights */
+    --primary-foreground: 216 78% 11%; /* Navy for text on primary buttons */
+    --primary-light: 205 90% 60%; /* Light Blue */
+    --primary-light-foreground: 216 78% 11%; /* Navy for text on light blue buttons */
+    --secondary: 217 33% 25%; /* A slightly lighter navy for secondary elements */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 25%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%; /* Bright Red */
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 210 40% 98%;
+    --radius: 0.5rem;
+    --logo: 205 90% 60%; /* Light Blue */
+    --chart-1: 210 40% 98%;
+    --chart-2: 215 20% 65%;
+    --chart-3: 217 33% 50%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
