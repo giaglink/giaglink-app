@@ -1,0 +1,40 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to check if a user is an admin by looking at a field in their user document.
+    function isAdmin(userId) {
+      return exists(/databases/$(database)/documents/users/$(userId)) &&
+             get(/databases/$(database)/documents/users/$(userId)).data.isAdmin == true;
+    }
+
+    // Rules for the 'users' collection
+    match /users/{userId} {
+      // Anyone can create a user document (signup).
+      allow create: if request.auth != null;
+
+      // An authenticated user can read their own document.
+      // An admin can read any user's document.
+      allow read: if request.auth.uid == userId || isAdmin(request.auth.uid);
+
+      // An authenticated user can only update their own document.
+      allow update: if request.auth.uid == userId;
+
+      // Nobody can delete user documents.
+      allow delete: if false;
+
+      // Rules for user subcollections (investments, withdrawals)
+      match /{subcollection}/{docId} {
+        // An authenticated user can create, read, and delete documents in their own subcollections.
+        allow create, read, delete: if request.auth.uid == userId;
+
+        // Admins can read any document in any user's subcollection.
+        allow read: if isAdmin(request.auth.uid);
+
+        // Only admins can update documents in subcollections (e.g., withdrawal status).
+        allow update: if isAdmin(request.auth.uid);
+      }
+    }
+  }
+}
