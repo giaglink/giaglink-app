@@ -6,10 +6,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useLoading } from "@/contexts/loading-context";
 
-import { DashboardSidebar } from "@/components/dashboard/sidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { DashboardHeader } from "@/components/dashboard/header";
-import { Skeleton } from "@/components/ui/skeleton";
+import { DashboardSidebar } from "../../components/dashboard/sidebar";
+import { SidebarProvider } from "../../components/ui/sidebar";
+import { DashboardHeader } from "../../components/dashboard/header";
+import { Skeleton } from "../../components/ui/skeleton";
 
 export default function DashboardLayout({
   children,
