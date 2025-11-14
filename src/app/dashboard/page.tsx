@@ -10,15 +10,15 @@ import Link from "next/link";
 import { calculateProfitForInvestment } from "@/lib/investment-utils";
 import type { Investment, Withdrawal, UserData } from "@/lib/types";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { StatCard } from "@/components/dashboard/stat-card";
-import { Currency } from "@/components/ui/currency";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card";
+import { StatCard } from "../../components/dashboard/stat-card";
+import { Currency } from "../../components/ui/currency";
 import { DollarSign, Percent, TrendingDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { PerformanceChart } from "@/components/dashboard/performance-chart";
-import { PortfolioTable } from "@/components/dashboard/portfolio-table";
-import { AddInvestmentButton } from "@/components/dashboard/add-investment-button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "../../components/ui/button";
+import { PerformanceChart } from "../../components/dashboard/performance-chart";
+import { PortfolioTable } from "../../components/dashboard/portfolio-table";
+import { AddInvestmentButton } from "../../components/dashboard/add-investment-button";
+import { Skeleton } from "../../components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import { useLoading } from "@/contexts/loading-context";
 
