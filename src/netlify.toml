@@ -11,3 +11,4 @@
 [[plugins]]
   # The Essential Next.js plugin is required for Next.js features to work correctly on Netlify.
   package = "@netlify/plugin-nextjs"
+
