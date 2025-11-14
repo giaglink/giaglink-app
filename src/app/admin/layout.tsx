@@ -6,11 +6,11 @@ import { auth, db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { AdminSidebar } from "@/components/admin/sidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { Skeleton } from "@/components/ui/skeleton";
-import { AdminHeader } from "@/components/admin/header";
-import { AdminNav } from "@/components/admin/nav";
+import { AdminSidebar } from "../../components/admin/sidebar";
+import { SidebarProvider } from "../../components/ui/sidebar";
+import { Skeleton } from "../../components/ui/skeleton";
+import { AdminHeader } from "../../components/admin/header";
+import { AdminNav } from "../../components/admin/nav";
 import { useLoading } from "@/contexts/loading-context";
 
 interface UserData {
